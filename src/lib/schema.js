@@ -13,8 +13,8 @@ const formSchema = z.object({
     .or(z.literal('')),
   alias: z
     .string()
-    .regex(/^[A-Za-z]+$/, {
-      message: 'Alias must contain only letters (a-z and A-Z)',
+    .regex(/^[A-Za-z_0-9]+$/, {
+      message: 'Alias must contain only letters (a-z and A-Z) or numbers (0-9) or underscores (_)',
     })
     .optional()
     .or(z.literal('')),

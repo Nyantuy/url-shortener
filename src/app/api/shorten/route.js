@@ -3,7 +3,7 @@ import prisma from '@/lib/prisma';
 import { customAlphabet } from 'nanoid';
 import formSchema from '@/lib/schema';
 
-const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 const generateHash = customAlphabet(chars, 6);
 
 export async function GET() {
