@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Turnstile } from '@marsidev/react-turnstile';
 import formSchema from '@/lib/schema';
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState('');
   const [copy, setCopy] = useState(false);
-  const [token, setToken] = useState('');
 
   const handleOnChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -61,7 +59,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen min-w-full">
       <div className="flex flex-grow flex-col justify-center items-center">
-        <div className="w-full max-w-md md:max-w-xl">
+        <div className="w-full max-w-sm md:max-w-xl px-2">
           <h1 className="font-bold text-3xl md:text-5xl text-center text-[#00ff00] mb-3 md:mb-7">HytamShortener</h1>
           {success ? (
             <div className="text-[#00ff00] p-4 border border-[#00ff00] rounded-lg">
