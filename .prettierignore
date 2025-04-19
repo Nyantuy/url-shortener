@@ -1,0 +1,17 @@
+# Fonts Dir
+fonts
+
+# CSS
+globals.css
+
+# Favicon
+favicon.ico
+
+# modules
+node_modules
+
+# package
+package.json
+
+# lock files
+*-lock.json
