@@ -17,7 +17,7 @@ export default async function RedirectPage({ params }) {
       where: { uid: hash },
     });
     return (
-      <div className='p-8 text-center'>
+      <div className="p-8 text-center">
         <h1>Link Expired</h1>
         <p>The link you are trying to access has expired.</p>
       </div>
