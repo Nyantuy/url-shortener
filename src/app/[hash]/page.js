@@ -1,3 +1,5 @@
+import LinkExpired from '@/components/LinkExpired';
+import LinkNotFound from '@/components/LinkNotFound';
 import prisma from '@/lib/prisma';
 import { redirect } from 'next/navigation';
 
@@ -9,24 +11,17 @@ export default async function RedirectPage({ params }) {
   });
 
   if (!record) {
-    redirect('/');
+    return <LinkNotFound />;
   }
 
   if (record.expiredAt && new Date(record.expiredAt) < new Date()) {
     await prisma.urlInfo.delete({
       where: { uid: hash },
     });
-    return (
-      <div className="p-8 text-center">
-        <h1>Link Expired</h1>
-        <p>The link you are trying to access has expired.</p>
-      </div>
-    );
+    return <LinkExpired />;
   }
 
   if (record.url) {
     redirect(record.url);
   }
-
-  redirect('/');
 }
