@@ -23,11 +23,13 @@ export default function LinkNotFound() {
   return (
     <div className="flex flex-col min-h-screen min-w-full">
       <div className="flex flex-grow flex-col justify-center items-center">
-        <h1 className="text-left text-xl md:text-4xl font-semibold md:font-bold">Link Not Found</h1>
-        <p className="text-left text-sm md:text-lg">The link you are trying to access does not exist or has been deleted.</p>
-        <p className="mt-4 text-gray-400 text-sm">
-          Redirecting to home page in {seconds} second{seconds > 1 ? 's' : ''}...
-        </p>
+        <div className="px-2">
+          <h1 className="text-xl text-center md:text-4xl font-semibold md:font-bold">Link Not Found</h1>
+          <p className="text-sm md:text-lg text-justify">The link you are trying to access does not exist or has been deleted.</p>
+          <p className="mt-4 text-gray-400 text-sm text-center">
+            Redirecting to home page in {seconds} second{seconds > 1 ? 's' : ''}...
+          </p>
+        </div>
       </div>
     </div>
   );
